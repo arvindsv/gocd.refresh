@@ -53,6 +53,10 @@ helpers do
     $revision = `git rev-parse --verify HEAD 2>/dev/null || true`.strip if @revision.nil?
     $revision
   end
+
+  def put_gocd_in_span text
+    text.gsub(/GoCD/, '<span class="go">Go</span>CD')
+  end
 end
 
 ready do
